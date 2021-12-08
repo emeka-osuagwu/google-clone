@@ -1,7 +1,9 @@
 import {useState} from 'react'
 import { db } from '../firebase-config'
 import {collection, addDoc } from "firebase/firestore"
-import "./search.css"
+import "./assets/search.css"
+import {FaMicrophone, FaSearch} from "react-icons/fa"
+import logo from "../uploads/goog.gif"
 
 function Search() {
     interface searchInput {
@@ -28,11 +30,13 @@ function Search() {
     //console.log(searchValue)
 
     return (
-        <div>
-            <img src="./uploads/goog.gif" alt="google img" />
+        <div className="container">
+            <img src={logo} alt="google img" />
             <form className="input-form">
-                <input placeholder="search" type="text" onChange={(event) => {setSearchValue(event.target.value)}} className="search-field"/>
-                <input type="submit" onClick={createUrl} className="submit-btn"/>
+
+            <button   className="btn2" ><FaSearch/></button>
+                <input  type="text" onChange={(event) => {setSearchValue(event.target.value)}} className="search-field" placeholder="type a url"/>
+                <button type="submit" onClick={createUrl} className="submit-btn" ><FaMicrophone/></button>
             </form>
         </div>
     )

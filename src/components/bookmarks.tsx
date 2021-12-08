@@ -1,6 +1,8 @@
 import {useEffect, useState} from 'react'
 //firebase syntax 
 import { db } from '../firebase-config'
+import { FaTwitter} from "react-icons/fa"
+import "./assets/bookmark.css"
 import {collection, getDocs } from "firebase/firestore"
 //-----------------------------------
 function Bookmarks(){
@@ -29,18 +31,33 @@ function Bookmarks(){
 
     return (
         <div>
-            {
+          {/*   {
                 bookmarks && bookmarks.map((bookmark) => {
-                    return(
-                    <div>
-                        <ul>
-                            <li key={bookmark.name}><a href="ff">{bookmark.name}</a></li>
+                    return( */}
+                    <div className="Bcontainer">
+                        <ul className="bookmark-container"> 
+                            {/* <li className="bookmark" key={bookmark.name}><a href="ff">{bookmark.name}</a></li> */}
+                         
+                           <a  href="" ><li className="bookmark"><FaTwitter style={{color: "white"}}/></li> <p>facebook</p></a>
+                           <a  href="" ><li className="bookmark"><FaTwitter style={{color: "white"}}/></li> <p>facebook</p></a>
+                           <a  href="" ><li className="bookmark"><FaTwitter style={{color: "white"}}/></li> <p>facebook</p></a>
+                           <a  href="" ><li className="bookmark"><FaTwitter style={{color: "white"}}/></li> <p>facebook</p></a>
+                           <a  href="" ><li className="bookmark"><FaTwitter style={{color: "white"}}/></li> <p>facebook</p></a>
+                           <a  href="" ><li className="bookmark"><FaTwitter style={{color: "white"}}/></li> <p>facebook</p></a>
+                           <a  href="" ><li className="bookmark"><FaTwitter style={{color: "white"}}/></li> <p>facebook</p></a>
+
+                               
+                           
+                           
+                            
+                           
+                            
                         </ul>
                     </div>
                     
-                    )
+            {/*         )
                 }) 
-            } 
+            }  */}
         </div>
     )
 }

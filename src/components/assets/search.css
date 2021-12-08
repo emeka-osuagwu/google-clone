@@ -1,0 +1,55 @@
+.container{
+padding-top: 2rem;
+}
+
+h1{
+    font-size: 48px;
+}
+
+
+.input-form{
+    margin: auto;
+    width:50%; 
+    padding: 2rem;
+    display: flex;
+    justify-content: center;
+    flex-direction: row;
+    text-align: center;
+    align-content: center;
+}
+
+.search-field, .search-field:active{
+   
+    height: 40px;
+    text-indent: 20px;
+    font-family: Arial, Helvetica, sans-serif;
+    border: solid 1px rgb(222, 222, 222);
+   
+    border-right: none;
+    border-left: none;
+
+    flex: 1.5;
+}
+
+.submit-btn{
+    flex: 0.1;
+    border-top-right-radius: 20px;
+    border-bottom-right-radius: 20px;
+    border: solid 1px rgb(222, 222, 222);
+    border-left: none;
+    background-color: rgba(0, 0, 0, 0);
+    cursor: pointer;
+
+}
+
+.btn2{
+    border-top-right-radius: 0px;
+    border-bottom-right-radius: 0px;
+    flex: 0.1;
+    border-top-left-radius: 20px;
+    border-bottom-left-radius: 20px;
+    border: solid 1px rgb(222, 222, 222);
+    border-right: none;
+    background-color: rgba(0, 0, 0, 0);
+    color: rgb(210, 210, 210);
+}
