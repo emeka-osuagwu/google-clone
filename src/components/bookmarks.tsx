@@ -5,12 +5,18 @@ import { FaTwitter} from "react-icons/fa"
 import "./assets/bookmark.css"
 import {collection, getDocs } from "firebase/firestore"
 //-----------------------------------
-function Bookmarks(){
+function Bookmarks(){ 
+
+    function truncate(source: string, size: number) {
+        return source.length > size ? source.slice(0, size - 1) + "…" : source;
+      }
+
+    const BookmarkLenght: number = 3; 
 
     interface IUrl {
-        name: string;
-        id: string;
-       
+        name: string;  
+        id: string; 
+        
       }
 
     const [bookmarks, setBookmarks] = useState<IUrl[]>([])
@@ -21,44 +27,40 @@ function Bookmarks(){
     useEffect(() =>{
         const getUrl = async () =>{
             const data = await getDocs(urlCollectionRef)
-          //setBookmarks(data.docs.map((doc) => ({...doc.data(), id: doc.id}) ))
+            setBookmarks(data.docs.map((doc) => ({name:doc.data().name , id: doc.id}) ))
+
+            
+               data.docs.map((doc) =>{
+                   console.log(doc.data().name)
+               })
+        
         } 
 
         getUrl()
 
-        console.log(bookmarks)
     }, [])
 
-    return (
-        <div>
-          {/*   {
-                bookmarks && bookmarks.map((bookmark) => {
-                    return( */}
-                    <div className="Bcontainer">
-                        <ul className="bookmark-container"> 
-                            {/* <li className="bookmark" key={bookmark.name}><a href="ff">{bookmark.name}</a></li> */}
-                         
-                           <a  href="" ><li className="bookmark"><FaTwitter style={{color: "white"}}/></li> <p>facebook</p></a>
-                           <a  href="" ><li className="bookmark"><FaTwitter style={{color: "white"}}/></li> <p>facebook</p></a>
-                           <a  href="" ><li className="bookmark"><FaTwitter style={{color: "white"}}/></li> <p>facebook</p></a>
-                           <a  href="" ><li className="bookmark"><FaTwitter style={{color: "white"}}/></li> <p>facebook</p></a>
-                           <a  href="" ><li className="bookmark"><FaTwitter style={{color: "white"}}/></li> <p>facebook</p></a>
-                           <a  href="" ><li className="bookmark"><FaTwitter style={{color: "white"}}/></li> <p>facebook</p></a>
-                           <a  href="" ><li className="bookmark"><FaTwitter style={{color: "white"}}/></li> <p>facebook</p></a>
+    console.log(bookmarks)
 
-                               
-                           
-                           
+    return (
+        bookmarks.length < 0 ? <h2>loading bookmarks</h2>
+        :
+        <ul className="bookmark-container"> 
+            {
+                 bookmarks.map((bookmark) => {
+                    for (let i= 0; i < BookmarkLenght; i++){
+                    return( 
                             
-                           
-                            
-                        </ul>
-                    </div>
-                    
-            {/*         )
+                                <a className="bookmark-link" href={`https://${bookmark.name}`} >
+                                    <li className="bookmark"><FaTwitter style={{color: "white"}}/></li>
+                                    <p>{ truncate(`${bookmark.name}`, 12)}</p>  
+                                </a>    
+                                                  
+                      ) 
+                    }
                 }) 
-            }  */}
-        </div>
+            }  
+        </ul>
     )
 }
 

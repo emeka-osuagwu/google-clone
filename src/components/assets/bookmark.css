@@ -2,7 +2,6 @@
 
 .bookmark-container{
     list-style: none;
-    display: flex;
     margin: auto;
     width:50%; 
     padding: 2rem;
@@ -16,7 +15,7 @@
 }
 
 .bookmark{
-    padding: 20px;
+    padding: 20px !important;
     border: solid 1px grey;
     margin: 10px;
     border-radius: 50px;
@@ -24,6 +23,11 @@
     text-decoration: none;
     color: rgb(104, 104, 104);
     background-color: rgb(213, 213, 213);
+   }
+
+.bookmark-link{
+    display: flex;
+    flex-direction: column;
 }
 
 p {
@@ -32,9 +36,11 @@ p {
     margin-top: -5px;
     text-decoration: none;
     color: black;
-    
+
 }
 
 a{
     text-decoration: none;
+    margin: 0px 10px 0 10px;
+    
 }

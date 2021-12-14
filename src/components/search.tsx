@@ -17,6 +17,7 @@ function Search() {
     const [searchValue, setSearchValue] = useState("")
 
  
+    const CreateUrlFnc = () => {
         const createUrl = async( ) => {
             try {
                 await addDoc(urlCollectionRef, {name: searchValue})
@@ -24,20 +25,26 @@ function Search() {
             } catch (error) {
                 console.log(error)
             }
+
+            
         }
+
+        createUrl()
+    }
+       
         
-  
+      
     //console.log(searchValue)
 
     return (
         <div className="container">
             <img src={logo} alt="google img" />
-            <form className="input-form">
+            <div className="input-form">
 
-            <button   className="btn2" ><FaSearch/></button>
+                <button   className="btn2" ><FaSearch/></button>
                 <input  type="text" onChange={(event) => {setSearchValue(event.target.value)}} className="search-field" placeholder="type a url"/>
-                <button type="submit" onClick={createUrl} className="submit-btn" ><FaMicrophone/></button>
-            </form>
+                <button  onClick={CreateUrlFnc} className="submit-btn" ><FaMicrophone/></button>
+            </div>
         </div>
     )
 }
