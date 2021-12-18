@@ -28,19 +28,12 @@ function Bookmarks(){
         const getUrl = async () =>{
             const data = await getDocs(urlCollectionRef)
             setBookmarks(data.docs.map((doc) => ({name:doc.data().name , id: doc.id}) ))
-
             
-               data.docs.map((doc) =>{
-                   console.log(doc.data().name)
-               })
-        
         } 
 
         getUrl()
 
     }, [])
-
-    console.log(bookmarks)
 
     return (
         bookmarks.length < 0 ? <h2>loading bookmarks</h2>

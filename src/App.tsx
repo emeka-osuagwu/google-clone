@@ -3,21 +3,19 @@ import './App.css';
 import Bookmarks from './components/bookmarks';
 import Search from './components/search';
 import Example from './components/Modal';
+/* import {googleContextProvider} from './components/context/ReactContext.' */
 
 function App( ) {
 const [url , setUrl] = useState([])
 
   return (
-    
-    <div className="App">
-      <Search/>
-      <Bookmarks />
-     {/*  <UploadImage/> */}
-      <Example />
-     {/*  <UploadSection/> */}
-
-      
-    </div>
+   /*  <googleContextProvider> */
+        <div className="App">
+          <Search/>
+          <Bookmarks />
+          <Example />
+        </div>
+   /*  </googleContextProvider> */
   );
 }
 

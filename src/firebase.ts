@@ -1,5 +1,6 @@
-import  {initializeApp } from "firebase/app"
-import { getFirestore } from "@firebase/firestore"
+import firebase from 'firebase/compat/app';
+import 'firebase/storage'
+
 const firebaseConfig = {
     apiKey: "AIzaSyCKOnMeLTdTI99HZ4k6kA83EcWLdTBNMLs",
     authDomain: "clone-efd4a.firebaseapp.com",
@@ -10,9 +11,11 @@ const firebaseConfig = {
     measurementId: "G-LTB7FSN2KX"
   };
 
-  // Initialize Firebase
-  //firebase.initializeApp(firebaseConfig);
-const app = initializeApp(firebaseConfig);
-export const db = getFirestore(app);  
+ 
+firebase.initializeApp(firebaseConfig);
+const storage = firebase.storage().ref(`/images/cover.jpg`)
+
+export default storage;
+
 
  
