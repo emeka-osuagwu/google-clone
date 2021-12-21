@@ -1,0 +1,120 @@
+.upload-container{
+  
+    padding-left: 0;
+}
+
+
+.uploadArea{
+    
+    display: flex;
+    justify-content: start;
+    flex-direction: row;
+    text-align: center;
+    align-content: center;
+  
+}
+
+h3{
+    font-family: Arial, Helvetica, sans-serif;
+    margin-bottom: 4rem;
+    color: #DEE0E2;
+    font-weight: 400;
+}
+
+ul{
+    text-decoration: none;
+    list-style-type: none;
+    margin-top: 10px;
+    color: #fff;
+}
+
+ul li{
+    text-align: left;
+    margin-top: 0px;
+    font-family: Arial, Helvetica, sans-serif;
+    flex: 1;
+    background-color: #383F4D;
+    padding: 10px;
+}
+
+.option{
+    flex: 1;
+    display: flex;
+    justify-content: start;
+    flex-direction: row;
+  
+ 
+}
+
+a{
+    color: #7DA2DE;
+}
+
+.upload-box{
+    float: right;
+    margin-top: -20px;
+}
+
+.input-url{
+    height: 40px;
+    flex: 1;
+    margin-left: 20px;
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: rgba(0, 0, 0, 0);
+    border: solid 1px #7DA2DE;
+    color: #DEE0E2;
+    border-radius: 3px;
+    text-indent: 20px;
+}
+
+
+.input-file-container {
+    position: relative;
+
+    margin-left: 50px;
+    flex: 1;
+  } 
+ .input-file-trigger {
+    display: block;
+    padding: 8px 45px;
+    background: #7DA2DE;
+    color: #fff;
+    font-size: 1em;
+    transition: all .4s;
+    cursor: pointer;
+    font-family: Arial, Helvetica, sans-serif;
+    border-radius: 3px;
+    margin-left: -50px;
+  }
+.input-file {
+    position: absolute;
+    top: 0; left: 0;
+    width: 225px;
+    opacity: 0;
+    padding: 14px 0;
+    cursor: pointer;
+  }
+  .input-file:hover + .input-file-trigger,
+  .input-file:focus + .input-file-trigger,
+  .input-file-trigger:hover,
+  .input-file-trigger:focus {
+    background: #34495E;
+    color: #39D2B4;
+  }
+  
+  .file-return {
+    margin: 0;
+  }
+  .file-return:not(:empty) {
+    margin: 1em 0;
+  }
+  .file-return {
+    font-style: italic;
+    font-size: .9em;
+    font-weight: bold;
+  }
+  .file-return:not(:empty):before {
+    content: "Selected file: ";
+    font-style: normal;
+    font-weight: normal;
+  }
